@@ -4,23 +4,23 @@ This project was part of my coursework for ECEG 478: Machine Learning. The objec
 
 #### Data Description
 The data contains the following labels and target label:
-● Patient ID: Each datapoint was assigned a unique patient ID number to ensure patient anonymity.
-● Year: The year the cancer diagnosis was reported.
-● Age: A continuous numerical variable representing the patient's age at the time of diagnosis. Values range from 20 to 90 years. This feature is essential as age is often correlated with both cancer risk and prognosis.
-● Gender: A categorical variable with three possible values — Male, Female, or Other. Gender can influence cancer incidence and outcomes due to biological, behavioral, and healthcare access differences.
-● Country/Region: A nominal categorical variable indicating the patient’s country or region of residence. This feature captures geographic disparities in cancer prevalence, environmental exposure, healthcare infrastructure, and survival rates.
-● Cancer Type: A nominal categorical variable specifying the diagnosed type of cancer, such as Breast, Lung, Colon, etc. Cancer type significantly impacts the severity, treatment strategy, and expected survival outcomes.
-● Cancer Stage: An ordinal categorical variable indicating the progression of the cancer at diagnosis. Stages range from Stage 0 (pre-cancer or in situ) to Stage IV (advanced/metastatic cancer). This is a critical predictor of prognosis and treatment complexity.
-● Risk Factors: A composite set of binary or numerical features representing exposure to known cancer risk factors. These include:
-● Genetic Risk (e.g., family history)
-● Air Pollution Exposure
-● Alcohol Use
-● Smoking
-● Obesity
-These variables help estimate the likelihood of developing cancer and may correlate with severity or survival.
-● Treatment Cost: A continuous numerical variable measuring the estimated cost of treatment in U.S. dollars (USD). Treatment cost may serve as a proxy for treatment intensity, resource allocation, or healthcare access level.
-● Survival Years: A continuous numerical feature indicating the number of years the patient has survived post-diagnosis. This can be used to assess treatment efficacy or long-term prognosis. It's also potentially a target variable for survival analysis.
-● Severity Score: The target label for prediction — a composite ordinal score representing the severity of the cancer diagnosis. It may be derived from a combination of cancer stage, risk factors, and survival outlook. The label was initially provided as a finite, continuous numeric value that I categorized into discrete classes (e.g., Low, Medium, High severity), this score guides triage and clinical prioritization.
+- Patient ID: Each datapoint was assigned a unique patient ID number to ensure patient anonymity. \n
+- Year: The year the cancer diagnosis was reported. \n
+- Age: A continuous numerical variable representing the patient's age at the time of diagnosis. Values range from 20 to 90 years. This feature is essential as age is often correlated with both cancer risk and prognosis. \n
+- Gender: A categorical variable with three possible values — Male, Female, or Other. Gender can influence cancer incidence and outcomes due to biological, behavioral, and healthcare access differences. \n
+- Country/Region: A nominal categorical variable indicating the patient’s country or region of residence. This feature captures geographic disparities in cancer prevalence, environmental exposure, healthcare infrastructure, and survival rates. \n
+- Cancer Type: A nominal categorical variable specifying the diagnosed type of cancer, such as Breast, Lung, Colon, etc. Cancer type significantly impacts the severity, treatment strategy, and expected survival outcomes. \n
+- Cancer Stage: An ordinal categorical variable indicating the progression of the cancer at diagnosis. Stages range from Stage 0 (pre-cancer or in situ) to Stage IV (advanced/metastatic cancer). This is a critical predictor of prognosis and treatment complexity. \n
+- Risk Factors: A composite set of binary or numerical features representing exposure to known cancer risk factors. These include: \n
+- Genetic Risk (e.g., family history) \n
+- Air Pollution Exposure \n
+- Alcohol Use \n
+- Smoking \n
+- Obesity \n
+These variables help estimate the likelihood of developing cancer and may correlate with severity or survival. \n
+- Treatment Cost: A continuous numerical variable measuring the estimated cost of treatment in U.S. dollars (USD). Treatment cost may serve as a proxy for treatment intensity, resource allocation, or healthcare access level. \n
+- Survival Years: A continuous numerical feature indicating the number of years the patient has survived post-diagnosis. This can be used to assess treatment efficacy or long-term prognosis. It's also potentially a target variable for survival analysis. \n
+- Severity Score: The target label for prediction — a composite ordinal score representing the severity of the cancer diagnosis. It may be derived from a combination of cancer stage, risk factors, and survival outlook. The label was initially provided as a finite, continuous numeric value that I categorized into discrete classes (e.g., Low, Medium, High severity), this score guides triage and clinical prioritization.
 
 
 #### Results 
