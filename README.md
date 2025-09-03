@@ -1,93 +1,103 @@
-# Cancer Severity Classification Model
+Cancer Severity Classification Model
 
-This project was part of my coursework for ECEG 478: Machine Learning. The objective of this project is to build a complex neural network that can predict the severity of a cancer diagnosis using global patient data from 2015 to 2024. The type of machine learning implemented is supervised learning classification models, where the system learns patterns in labeled data to predict the Severity Score — a composite metric indicating how severe a patient’s cancer is. Through the project I explored four different machine learning models - including Logistic Regression, Neural Networks, Random Forests, and Gradient Boosting classifiers - and compared their performance.
+This project was developed as part of ECEG 478: Machine Learning. The goal was to design and evaluate machine learning models that can predict the severity of a cancer diagnosis using global patient data collected between 2015–2024.
 
-#### Data Description
-The data contains the following labels and target label:
-- Patient ID: Each datapoint was assigned a unique patient ID number to ensure patient anonymity. \n
-- Year: The year the cancer diagnosis was reported. \n
-- Age: A continuous numerical variable representing the patient's age at the time of diagnosis. Values range from 20 to 90 years. This feature is essential as age is often correlated with both cancer risk and prognosis. \n
-- Gender: A categorical variable with three possible values — Male, Female, or Other. Gender can influence cancer incidence and outcomes due to biological, behavioral, and healthcare access differences. \n
-- Country/Region: A nominal categorical variable indicating the patient’s country or region of residence. This feature captures geographic disparities in cancer prevalence, environmental exposure, healthcare infrastructure, and survival rates. \n
-- Cancer Type: A nominal categorical variable specifying the diagnosed type of cancer, such as Breast, Lung, Colon, etc. Cancer type significantly impacts the severity, treatment strategy, and expected survival outcomes. \n
-- Cancer Stage: An ordinal categorical variable indicating the progression of the cancer at diagnosis. Stages range from Stage 0 (pre-cancer or in situ) to Stage IV (advanced/metastatic cancer). This is a critical predictor of prognosis and treatment complexity. \n
-- Risk Factors: A composite set of binary or numerical features representing exposure to known cancer risk factors. These include: \n
-- Genetic Risk (e.g., family history) \n
-- Air Pollution Exposure \n
-- Alcohol Use \n
-- Smoking \n
-- Obesity \n
-These variables help estimate the likelihood of developing cancer and may correlate with severity or survival. \n
-- Treatment Cost: A continuous numerical variable measuring the estimated cost of treatment in U.S. dollars (USD). Treatment cost may serve as a proxy for treatment intensity, resource allocation, or healthcare access level. \n
-- Survival Years: A continuous numerical feature indicating the number of years the patient has survived post-diagnosis. This can be used to assess treatment efficacy or long-term prognosis. It's also potentially a target variable for survival analysis. \n
-- Severity Score: The target label for prediction — a composite ordinal score representing the severity of the cancer diagnosis. It may be derived from a combination of cancer stage, risk factors, and survival outlook. The label was initially provided as a finite, continuous numeric value that I categorized into discrete classes (e.g., Low, Medium, High severity), this score guides triage and clinical prioritization.
+The task is framed as a supervised learning classification problem, where models learn from labeled data to predict a Severity Score — a composite metric that reflects the seriousness of a patient’s cancer.
 
+Four machine learning models were implemented and compared:
 
-#### Results 
+Logistic Regression
 
-###### Model Performance Results 
+Random Forest
 
-Random Forest Heat Map 
-<img width="519" height="391" alt="image" src="https://github.com/user-attachments/assets/16a68868-d138-4aa1-8b9d-17a56a1949d6" />
+Gradient Boosting
 
-Random Forest Model Confusion Matrix: 
+Neural Networks
 
------ Training RandomForest ----- 
-Training time: 3.44 seconds 
-Test Accuracy: 0.9028 
-            precision recall f1-score support
-            0.93       0.92       0.93   3368 
-            0.84       0.87       0.86   3382 
-            0.94       0.91       0.92   3250
-accuracy                          0.90   10000
-macro avg   0.90       0.90       0.90   10000 
-weighted avg 0.90       0.90       0.90   10000
+📊 Dataset Overview
 
-Logistic Regression Confusion Matrix
------ Training LogisticRegression ----- 
-Training time: 0.20 seconds 
-Test Accuracy: 0.9981 
-            precision recall f1-score support
-            1.00       1.00     1.00     3368 
-            1.00       1.00     1.00     3382 
-            1.00       1.00     1.00     3250
-accuracy                        1.00     10000 
-macro avg   1.00       1.00     1.00     10000 
-weighted avg 1.00      1.00     1.00     10000
+The dataset contains patient-level features and a target severity score. Key features include:
 
-Logistic Regression Heat Map 
-<img width="519" height="391" alt="image" src="https://github.com/user-attachments/assets/2eecd3d0-6027-49ac-8c98-a4165fd16e83" />
+Patient ID – Unique anonymized identifier.
 
-Gradient Boosting Confusion Matrix
------ Training GradientBoosting ----- 
-Training time: 16.01 seconds 
-Test Accuracy: 0.9242 
-             precision recall f1-score support
-             0.95        0.93     0.94    3368 
-             0.88        0.90     0.89    3382 
-             0.95 0.94 0.94 3250
-accuracy                          0.92    10000 
-macro avg    0.93 0.92 0.92 10000 
-weighted avg 0.93 0.92 0.92 10000
+Year – Year of diagnosis.
 
-Gradient Boosting Heat Map 
-<img width="519" height="391" alt="image" src="https://github.com/user-attachments/assets/22d52d1d-f98e-49de-be52-d3b30a675ca2" />
+Age – Patient’s age (20–90).
 
-Neural Network Heat Map 
-<img width="519" height="391" alt="image" src="https://github.com/user-attachments/assets/449f1e38-5225-4084-977b-c9930e50d653" />
+Gender – Male, Female, or Other.
 
-Training time: 2.64 seconds 
-Test Accuracy: 0.9873 
-             precision recall f1-score support
-             0.99        0.99      0.99    3368 
-             0.98        0.98      0.98    3382 
-             0.99        0.99      0.99    3250
-accuracy                           0.99    10000 
-macro avg    0.99        0.99      0.99    10000 
-weighted avg 0.99        0.99      0.99    10000
+Country/Region – Geographic origin (captures regional disparities).
 
-Model Comparison based on train time, test accuracy and F1 score.
-<img width="1184" height="590" alt="image" src="https://github.com/user-attachments/assets/aa01125b-33b8-4263-aea0-99e7b5014995" />
+Cancer Type – Type of cancer (e.g., Breast, Lung, Colon).
 
+Cancer Stage – Ordinal stage from 0 (in situ) to IV (advanced/metastatic).
 
+Risk Factors – Composite variables such as:
 
+Genetic predisposition
+
+Air pollution exposure
+
+Alcohol use
+
+Smoking
+
+Obesity
+
+Treatment Cost – Estimated treatment cost (USD).
+
+Survival Years – Years survived post-diagnosis.
+
+Severity Score (Target Label) – Composite ordinal score (Low, Medium, High) based on cancer stage, risk factors, and survival outlook.
+
+⚙️ Results
+Random Forest
+
+Training Time: 3.44s
+
+Test Accuracy: 90.28%
+
+Confusion Matrix & Heatmap:
+<img width="519" height="391" alt="Random Forest Heatmap" src="https://github.com/user-attachments/assets/16a68868-d138-4aa1-8b9d-17a56a1949d6" />
+
+Logistic Regression
+
+Training Time: 0.20s
+
+Test Accuracy: 99.81%
+
+Confusion Matrix & Heatmap:
+<img width="519" height="391" alt="Logistic Regression Heatmap" src="https://github.com/user-attachments/assets/2eecd3d0-6027-49ac-8c98-a4165fd16e83" />
+
+Gradient Boosting
+
+Training Time: 16.01s
+
+Test Accuracy: 92.42%
+
+Confusion Matrix & Heatmap:
+<img width="519" height="391" alt="Gradient Boosting Heatmap" src="https://github.com/user-attachments/assets/22d52d1d-f98e-49de-be52-d3b30a675ca2" />
+
+Neural Network
+
+Training Time: 2.64s
+
+Test Accuracy: 98.73%
+
+Heatmap:
+<img width="519" height="391" alt="Neural Network Heatmap" src="https://github.com/user-attachments/assets/449f1e38-5225-4084-977b-c9930e50d653" />
+
+📈 Model Comparison
+
+Comparison of training time, test accuracy, and F1 score across all models:
+
+<img width="1184" height="590" alt="Model Comparison Chart" src="https://github.com/user-attachments/assets/aa01125b-33b8-4263-aea0-99e7b5014995" />
+🚀 Key Insights
+
+Logistic Regression surprisingly outperformed other models, achieving near-perfect accuracy.
+
+Neural Networks also showed very high accuracy, with slightly higher computational cost.
+
+Random Forest and Gradient Boosting performed reasonably well but were less accurate compared to Logistic Regression and Neural Networks.
+
+Trade-off: Logistic Regression offered the best balance of accuracy and training efficiency.
